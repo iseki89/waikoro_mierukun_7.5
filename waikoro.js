@@ -356,13 +356,7 @@ javascript:(function(){
 
 			char_state[i]["testBet"] = 0;
 			for(j=0;j<f.length;j++){
-				// if(j==1 && dieFont){//死んだキャラのHP表示がfontタグになるせいでバグるのを回避したいのよ
-				// 	j++;
-				// 	// console.log("j増やしたよ");
-				// }
-
 				const be = f[j].innerHTML.match(/\d*枚/g);
-				// console.log(be);
 				let bet;
 				if(be!=null){
 					bet = be[0].replace("枚","");
@@ -374,9 +368,7 @@ javascript:(function(){
 					}
 				}
 				const un = f[j].innerHTML.match(/.+ \d*枚/g);
-				// console.log(un);
 				let userName;
-				// if(un) userName = un[0];
 				if(un!=null){
 					userName = un[0].replace(/ \d*枚/,"");
 					if(userName.match(/<b>/)){
@@ -619,7 +611,6 @@ javascript:(function(){
 
 	const users_sort = Object.keys(users);
 	users_sort.sort();
-	console.log(users_sort);
 	const div = document.createElement("div");
 	div.innerHTML = "BET者一覧(" + users_sort.length + "名)";
 	box.appendChild(div);
