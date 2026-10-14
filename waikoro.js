@@ -442,7 +442,7 @@ javascript:(function(){
 
 		for(i=0;i<chars.length;i++){
 			let alone = 1;
-			let ignore_tb = false;
+			let ignore_tb = false; //なんかこの関数一切仕事してないけど、たぶん一人勝ち1.2倍補正の仕様を勘違いしてた時の名残りをそのまま残してるだけだと思う。
 			if(pushed_name_i!=undefined){
 				if(char_bet_user[i].length==2 && char_bet_user[i][0]==buttons[pushed_name_i].innerHTML && char_bet_user[i][1]=="お試し"){
 					// console.log(char_bet_user[i][0] + " " + char_bet_user[i][1]);
@@ -615,6 +615,7 @@ javascript:(function(){
 
 	const users_sort = Object.keys(users);
 	users_sort.sort();
+	console.log(users_sort);
 	const div = document.createElement("div");
 	div.innerHTML = "BET者一覧(" + users_sort.length + "名)";
 	box.appendChild(div);
