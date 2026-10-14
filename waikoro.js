@@ -375,9 +375,13 @@ javascript:(function(){
 				}
 				const un = f[j].innerHTML.match(/.+ \d*枚/g);
 				// console.log(un);
-				let userName = un[0];
+				let userName;
+				// if(un) userName = un[0];
 				if(un!=null){
 					userName = un[0].replace(/ \d*枚/,"");
+					if(userName.match(/<b>/)){
+						userName = userName + "</b>";
+					}
 					if(users[userName]==undefined){
 						users[userName] = [];
 						user_sum[userName] = bet;
